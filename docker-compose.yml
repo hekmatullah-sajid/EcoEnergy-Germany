@@ -1,0 +1,17 @@
+version: '3'
+services:
+  mageai:
+    image: mageai/mageai:latest
+    command: mage start mage-ecoenergy
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      USER_CODE_PATH: /home/src/ecoenergy-germany
+    ports:
+      - 6789:6789
+    volumes:
+      - .:/home/src/
+    restart: on-failure:5
