@@ -1,0 +1,21 @@
+sources:
+- description: Dataframes Mage upstream blocks
+  loader: mage
+  name: mage_dbt_ecoenergy
+  schema: ecoenergy_bq_dataset
+  tables:
+  - description: Dataframe for block `profound_treasure` of the `ecoenergy_data_transformation_dbt`
+      mage pipeline.
+    identifier: mage_ecoenergy_data_transformation_dbt_profound_treasure
+    meta:
+      block_uuid: profound_treasure
+      pipeline_uuid: ecoenergy_data_transformation_dbt
+    name: ecoenergy_data_transformation_dbt_profound_treasure
+  - description: Dataframe for block `ecoenergy_data_to_bigquery` of the `ecoenergy_data_to_bigquery`
+      mage pipeline.
+    identifier: mage_ecoenergy_data_to_bigquery_ecoenergy_data_to_bigquery
+    meta:
+      block_uuid: ecoenergy_data_to_bigquery
+      pipeline_uuid: ecoenergy_data_to_bigquery
+    name: ecoenergy_data_to_bigquery_ecoenergy_data_to_bigquery
+version: 2

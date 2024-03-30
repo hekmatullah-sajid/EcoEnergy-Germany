@@ -1,0 +1,11 @@
+dbt_ecoenergy:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: ecoenergy-germany
+      dataset: ecoenergy_bq_dataset
+      threads: 4
+      keyfile: "{{ env_var('GCP_CREDENTIALS') }}"
+      #keyfile: E:\DE Zoomcamp\EcoEnergy-Germany\secrets\ecoenergy-germany-service-acc.json

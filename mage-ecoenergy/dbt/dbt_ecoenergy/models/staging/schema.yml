@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: staging
+    database: ecoenergy-germany
+    schema: ecoenergy_bq_dataset
+    tables:
+      - name: ecoenergy_data
