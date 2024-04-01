@@ -15,3 +15,4 @@ secrets/
 .ssh_tunnel
 dbt/logs
 dbt/.user.yml
+data

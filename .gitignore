@@ -1,5 +1,3 @@
-data
 info
-secrets/*.json
 mage_data
-docs/
+data
