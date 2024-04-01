@@ -29,9 +29,13 @@ def load_ecoenergy_data_from_dataset(*args, **kwargs):
     if os.path.exists(filepath):
         print("Dataset already downloaded and exists.")
     else:
+        print("Downloading the dataset.")
         response = requests.get(dataset_url)
 
         if response.status_code == 200:
+            print("Dataset downloaded successfully!")
+            print("Processing the dataset.")
+
             # Chekc if the data directory exists, if not create it
             if not os.path.exists("data"):
                 os.makedirs("data")
@@ -39,9 +43,8 @@ def load_ecoenergy_data_from_dataset(*args, **kwargs):
             # Writing content to the file in the data directory
             with open(filepath, "wb") as f:
                 f.write(response.content)
-            print("Dataset download successful!")
         else:
-            print("Failed to download dataset:", response.status_code)
+            print("Failed to download the dataset:", response.status_code)
     
     # maping dataset data types 
     ecoenergy_dtypes = {
@@ -81,6 +84,8 @@ def load_ecoenergy_data_from_dataset(*args, **kwargs):
     # the next date conversion is for BigQuery, without this the date is stored as datetime
     ecoenergy_df['commissioning_date'] = ecoenergy_df['commissioning_date'].dt.date
     ecoenergy_df['decommissioning_date'] = ecoenergy_df['decommissioning_date'].dt.date
+
+    print("Processing the dataset completed.")
 
     return ecoenergy_df
 

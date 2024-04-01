@@ -1,6 +1,5 @@
 data
 info
-secrets
+secrets/*.json
 mage_data
-.env
-docs
+docs/

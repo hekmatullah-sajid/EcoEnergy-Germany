@@ -18,7 +18,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - run_dbt_transformation
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -31,6 +32,31 @@ blocks:
   upstream_blocks:
   - ecoenergy_data_from_gcs
   uuid: ecoenergy_data_to_bigquery
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dbt:
+      command: run
+    dbt_profile_target: dev
+    dbt_project_name: dbt/dbt_ecoenergy
+    disable_query_preprocessing: false
+    export_write_policy: append
+    file_source:
+      path: dbts/run_dbt_transformation.yaml
+    use_raw_sql: false
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: yaml
+  name: run_dbt_transformation
+  retry_config: null
+  status: executed
+  timeout: null
+  type: dbt
+  upstream_blocks:
+  - ecoenergy_data_to_bigquery
+  uuid: run_dbt_transformation
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}

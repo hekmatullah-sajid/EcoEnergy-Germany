@@ -21,7 +21,6 @@ staging_ecoenergy_data as (
         {{ dbt.safe_cast("lon", api.Column.translate_type("float")) }} as lon,
         {{ dbt.safe_cast("lat", api.Column.translate_type("float")) }} as lat,
         {{ adapter.quote("municipality") }},
-        {{ adapter.quote("municipality_code") }},
         {{ adapter.quote("postcode") }},
         {{ adapter.quote("address") }},
         {{ adapter.quote("federal_state") }},

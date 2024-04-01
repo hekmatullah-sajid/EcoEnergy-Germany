@@ -12,4 +12,6 @@ logs/
 mage-ai.db
 mage_data/
 secrets/
-dbt
+.ssh_tunnel
+dbt/logs
+dbt/.user.yml

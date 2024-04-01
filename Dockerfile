@@ -1,4 +1,4 @@
-FROM mageai/mageai:latest
+FROM mageai/mageai:0.9.65
 
 ARG USER_CODE_PATH=/home/src/ecoenergy-germany
 

@@ -1,7 +1,8 @@
 version: '3'
 services:
-  mageai:
-    image: mageai/mageai:latest
+  ecoenergy_de:
+    image: mageai/mageai:0.9.65
+    container_name: ecoenergy_de
     command: mage start mage-ecoenergy
     env_file:
       - .env

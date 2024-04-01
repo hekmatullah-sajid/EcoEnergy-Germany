@@ -39,7 +39,7 @@ default:
   # Google
   GOOGLE_SERVICE_ACC_KEY:
   GOOGLE_SERVICE_ACC_KEY_FILEPATH: "{{ env_var('GCP_CREDENTIALS') }}"
-  GOOGLE_LOCATION: europe-west10 # Optional
+  # GOOGLE_LOCATION: europe-west10 # Optional
   # MongoDB
   # Specify either the connection string or the (host, password, user, port) to connect to MongoDB.
   MONGODB_CONNECTION_STRING: "mongodb://{username}:{password}@{host}:{port}/"

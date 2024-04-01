@@ -55,3 +55,6 @@ project_uuid: 0507d99cfdca4083a4ea0e3ce124e1cc
 help_improve_mage: false
 features:
   command_center: true
+  code_block_v2: false
+  dbt_v2: false
+pipelines:

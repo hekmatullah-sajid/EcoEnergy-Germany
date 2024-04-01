@@ -1,22 +1,11 @@
 version: 2
 
-sources:
-  - name: staging
-    database: "{{ env_var('GCP_PROJECT_ID') }}" # ecoenergy-germany
-    schema: "{{ env_var('BIGQUERY_DATASET') }}" # ecoenergy_bq_dataset
-    tables:
-      - name: "{{ env_var('BIGQUERY_TABLE') }}"# ecoenergy_data
-
 models:
-  - name: staging_ecoenergy_data
+  - name: fact_ecoenergy_data
     description: >
-      The dataset meticulously documents individual power plants in Germany 
-      supported by the German Renewable Energy Law (EEG), 
-      offering a detailed inventory of the country's renewable energy infrastructure. 
-      With a comprehensive overview of various renewable energy sources, 
-      it provides valuable insights into Germany's dynamic energy sector. 
-      This curated dataset serves as a crucial resource for policymakers, researchers, and stakeholders, 
-      facilitating informed decision-making and strategic planning in sustainable energy development.
+      The transformed dataset provides a comprehensive inventory of individual power plants 
+      in Germany and offers detailed insights into the country's renewable energy infrastructure 
+      after removing sparse data, performing data cleaning, and applying transformations.
     columns:
       - name: electrical_capacity
         description: Installed electrical capacity in MW.
@@ -54,8 +43,6 @@ models:
         description: Latitude coordinates.
       - name: municipality
         description: Name of German Gemeinde (municipality).
-      - name: municipality_code
-        description: German Gemeindenummer (municipality number).
       - name: postcode
         description: German zip code.
       - name: address
@@ -68,11 +55,7 @@ models:
         description: Date of decommissioning of specific unit.
       - name: voltage_level
         description: Voltage level of grid connection.
-      - name: eeg_id
-        description: Power plant EEG (German feed-in tariff law) remuneration number.
       - name: dso
         description: Name of distribution system operator of the region.
-      - name: dso_id
-        description: Company number of German distribution grid operator.
       - name: tso
         description: Name of transmission system operator of the area.

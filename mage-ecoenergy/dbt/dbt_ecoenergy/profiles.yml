@@ -4,8 +4,7 @@ dbt_ecoenergy:
     dev:
       type: bigquery
       method: service-account
-      project: ecoenergy-germany
-      dataset: ecoenergy_bq_dataset
+      project: "{{ env_var('GCP_PROJECT_ID') }}"
+      dataset: "{{ env_var('BIGQUERY_DATASET') }}"
       threads: 4
       keyfile: "{{ env_var('GCP_CREDENTIALS') }}"
-      #keyfile: E:\DE Zoomcamp\EcoEnergy-Germany\secrets\ecoenergy-germany-service-acc.json
