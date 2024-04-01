@@ -9,7 +9,6 @@ variable "project_id" {
 
 variable "region" {
   description = "Google Cloud region"
-  default     = "europe-west10"
 }
 
 variable "bucket_name" {

@@ -1,0 +1,6 @@
+credentials  = "../secrets/your_json_file_name.json"
+project_id   = "gcp_project_id"
+region       = "project_location"
+bucket_name  = "gcs_bucket_name"
+dataset_id   = "ecoenergy_bq_dataset"
+table_id     = "ecoenergy_data"

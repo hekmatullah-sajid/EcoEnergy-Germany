@@ -34,9 +34,20 @@ table_id     = "bigquery_table_name"
 **Prerequisites:**
 
 - [Terraform](https://developer.hashicorp.com/terraform/install)
-- [Docker](https://www.docker.com/products/docker-desktop/)
+- [Docker with Docker-Compose](https://www.docker.com/products/docker-desktop/)
 
-If you do not have them already installed, you can install them using `install_terraform.sh` and `install_docker.sh` respectively.
+If you do not have them already installed, you can install Terraform using the `install_terraform.sh` script.
+
+```bash
+chmod +x install_terraform.sh
+./install_terraform.sh
+```
+
+To install Docker with Docker-compose, use the following command for Ubuntu.
+
+```bash
+sudo snap install docker
+```
 
 ## Infrastructure Setup
 
@@ -51,7 +62,7 @@ terraform apply
 
 When prompted, write 'yes' and press Enter.
 
-Once infrastructure setup is complete, change the values of the following variables in `.env` file and use the values you used in `terraform.tfvars` file. Make sure not to change `DATASET_URL`, and only change the file name for the JSON file in `GCP_CREDENTIALS`.
+Once the infrastructure setup is complete, modify the values of the following variables in `example.env`, rename the file to `.env`, and utilize the values you employed in the terraform.tfvars file. Ensure that you refrain from altering DATASET_URL, and only modify the file name for the JSON file in GCP_CREDENTIALS.
 
 ```plaintext
 GCP_CREDENTIALS = "/home/src/secrets/your_json_file_name.json"
